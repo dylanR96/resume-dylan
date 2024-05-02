@@ -6,7 +6,6 @@ import "./index.css";
 import AboutMe from "./pages/AboutMe.jsx";
 import Projects from "./pages/Projects.jsx";
 import Contact from "./pages/Contact.jsx";
-import Home from "./pages/Home.jsx";
 import IntroPage from "./pages/IntroPage.jsx";
 
 const router = createBrowserRouter([
@@ -18,12 +17,6 @@ const router = createBrowserRouter([
         index: true,
         element: <IntroPage />,
         loader: () => (document.title = "Resume || Landing page"),
-      },
-
-      {
-        path: "/home",
-        element: <Home />,
-        loader: () => (document.title = "Resume || Home"),
       },
 
       {
