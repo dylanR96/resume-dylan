@@ -1,0 +1,21 @@
+.projects-wrapper {
+  display: flex;
+  max-width: 1280px;
+  height: 100svh;
+  margin: auto;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.project-btns {
+  display: flex;
+  flex-direction: column;
+}
+
+.projects-section {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(240, 249, 255);
+  width: 40rem;
+}

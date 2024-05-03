@@ -8,10 +8,24 @@ const Navbar = () => {
     <>
       <section className={styles["nav__wrapper"]}>
         <div className={styles["nav__container"]}>
-          <a onClick={() => navigate("/about")}>About me</a>
-          <a onClick={() => navigate("/projects")}>Projects</a>
-          <a onClick={() => navigate("/contact")}>Contact</a>
-          <a onClick={() => navigate("/")}>Go back</a>
+          <a className={styles["nav__link"]} onClick={() => navigate("/about")}>
+            About me
+          </a>
+          <a
+            className={styles["nav__link"]}
+            onClick={() => navigate("/projects")}
+          >
+            Projects
+          </a>
+          <a
+            className={styles["nav__link"]}
+            onClick={() => navigate("/contact")}
+          >
+            Contact
+          </a>
+          <a className={styles["nav__link"]} onClick={() => navigate("/")}>
+            Go back
+          </a>
         </div>
       </section>
     </>
