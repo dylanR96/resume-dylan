@@ -1,8 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Navbar from "../components/navigation/Navbar";
+import Navbar from "../../components/navigation/Navbar";
 import styles from "./Projects.module.css";
-import Buttons from "../components/Buttons";
+import Buttons from "../../components/Buttons";
 
 const Projects = () => {
   const [repos, setRepos] = useState([]);

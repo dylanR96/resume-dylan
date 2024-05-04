@@ -10,6 +10,13 @@
 .project-btns {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  gap: 4rem;
+  align-items: center;
+}
+
+.project-btn {
+  width: 8rem;
 }
 
 .projects-section {
