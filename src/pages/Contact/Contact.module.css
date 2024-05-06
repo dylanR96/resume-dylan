@@ -1,0 +1,29 @@
+.contact-page__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-page__content {
+  max-width: 1280px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-page__my-info {
+  width: 40rem;
+}
+
+.contact-page__form-wrapper {
+  display: flex;
+  margin-top: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-page__form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}

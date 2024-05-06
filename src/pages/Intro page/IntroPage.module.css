@@ -1,0 +1,12 @@
+.intro-page__wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-page__content {
+  max-width: 1280px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
