@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../../components/navigation/Navbar";
 import styles from "./Contact.module.css";
+import { RavenSvg, ScrollSvg } from "./RavenSvg";
 
 const Contact = () => {
   return (
@@ -32,6 +33,7 @@ const Contact = () => {
                 placeholder="Personal message"
               />
               <input type="submit" value="Send" />
+              <RavenSvg />
             </form>
           </div>
         </div>

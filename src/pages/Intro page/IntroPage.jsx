@@ -4,6 +4,7 @@ import { useState } from "react";
 import Buttons from "../../components/Buttons";
 import styles from "./IntroPage.module.css";
 import toast, { Toaster } from "react-hot-toast";
+import { animate, motion } from "framer-motion";
 import {
   DiceSideOne,
   DiceSideTwo,
@@ -12,6 +13,7 @@ import {
   DiceSideFive,
   DiceSideSix,
 } from "../../components/svgs/Dice";
+import DarkModeContainer from "../../components/containers/DarkModeContainer";
 
 const IntroPage = () => {
   const notify = () => toast("Success!");
@@ -23,18 +25,119 @@ const IntroPage = () => {
     let diceResult = Math.floor(Math.random() * 6 + 1);
     switch (diceResult) {
       case 1:
-        return setDice(<DiceSideOne />), setEnter(false);
+        return (
+          setDice(
+            <motion.div
+              id="dice"
+              animate={{ y: [-40, 0, -40] }}
+              transition={{
+                times: [0, 1],
+                duration: 1,
+                repeat: 5, // Adjust repeat count as needed
+                repeatType: "reverse", // Reverse animation after each iteration
+                ease: "easeInOut",
+              }}
+            >
+              <DiceSideOne />
+            </motion.div>
+          ),
+          setEnter(false)
+        );
       case 2:
-        return setDice(<DiceSideTwo />), setEnter(false);
+        return (
+          setDice(
+            <motion.div
+              id="dice"
+              animate={{ y: [-40, 0, -40] }}
+              transition={{
+                times: [0, 1],
+                duration: 1,
+                repeat: 5, // Adjust repeat count as needed
+                repeatType: "reverse", // Reverse animation after each iteration
+                ease: "easeInOut",
+              }}
+            >
+              <DiceSideTwo />
+            </motion.div>
+          ),
+          setEnter(false)
+        );
       case 3:
-        return setDice(<DiceSideThree />), setEnter(false);
+        return (
+          setDice(
+            <motion.div
+              id="dice"
+              animate={{ y: [-40, 0, -40] }}
+              transition={{
+                times: [0, 1],
+                duration: 1,
+                repeat: 5, // Adjust repeat count as needed
+                repeatType: "reverse", // Reverse animation after each iteration
+                ease: "easeInOut",
+              }}
+            >
+              <DiceSideThree />
+            </motion.div>
+          ),
+          setEnter(false)
+        );
       case 4:
-        return setDice(<DiceSideFour />), setEnter(true), notify();
+        return (
+          setDice(
+            <motion.div
+              id="dice"
+              animate={{ y: [-40, 0, -40] }}
+              transition={{
+                times: [0, 1],
+                duration: 1,
+                repeat: 5, // Adjust repeat count as needed
+                repeatType: "reverse", // Reverse animation after each iteration
+                ease: "easeInOut",
+              }}
+            >
+              <DiceSideFour />
+            </motion.div>
+          ),
+          setEnter(true),
+          notify()
+        );
 
       case 5:
-        return setDice(<DiceSideFive />), setEnter(true), notify();
+        setDice(
+          <motion.div
+            id="dice"
+            animate={{ y: [-40, 0, -40] }}
+            transition={{
+              times: [0, 1],
+              duration: 1,
+              repeat: 5, // Adjust repeat count as needed
+              repeatType: "reverse", // Reverse animation after each iteration
+              ease: "easeInOut",
+            }}
+          >
+            <DiceSideFive />
+          </motion.div>
+        ),
+          setEnter(true),
+          notify();
       case 6:
-        return setDice(<DiceSideSix />), setEnter(true), notify();
+        setDice(
+          <motion.div
+            id="dice"
+            animate={{ y: [-40, 0, -40] }}
+            transition={{
+              times: [0, 1],
+              duration: 1,
+              repeat: 5, // Adjust repeat count as needed
+              repeatType: "reverse", // Reverse animation after each iteration
+              ease: "easeInOut",
+            }}
+          >
+            <DiceSideSix />
+          </motion.div>
+        ),
+          setEnter(true),
+          notify();
       default:
         return <div>Error: Invalid User Role</div>;
     }
@@ -44,17 +147,11 @@ const IntroPage = () => {
     <>
       <div className={styles["intro-page__wrapper"]}>
         <div className={styles["intro-page__content"]}>
-          <div className="dice">{dice}</div>
+          <div className={styles["intro-page__die"]} id="dice">
+            {dice}
+          </div>
           <Toaster />
           <Buttons onClick={handleClick} label={"Roll"} />
-          {/* <div className="font1">IntroPage</div>
-      <div className="font2">IntroPage</div>
-      <div className="font3">IntroPage</div>
-      <div className="font4">IntroPage</div>
-      <div className="font5">IntroPage</div>
-      <div className="font6">IntroPage</div>
-      <div className="font7">IntroPage</div>
-      <div className="font8">IntroPage</div> */}
           {enter === false && <div>Roll again loser</div>}
           {enter === true && (
             <div>
@@ -62,6 +159,7 @@ const IntroPage = () => {
               <Buttons onClick={() => navigate("/about")} label={"Home"} />
             </div>
           )}
+          <DarkModeContainer />
         </div>
       </div>
     </>

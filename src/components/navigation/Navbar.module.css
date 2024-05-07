@@ -1,8 +1,17 @@
 .nav__wrapper {
-  background-color: #023602;
-  color: #a69013;
-  border: 1px solid #8b4513;
+  background: linear-gradient(
+    135deg,
+    #5ab9e5,
+    #5a8cd3,
+    #5a8cd3,
+    #5a76ca,
+    #595fc1,
+    #5847b7,
+    #5632ae
+  );
+  border: 1px solid;
   height: 5em;
+  color: white;
   display: flex;
   justify-content: center;
 }

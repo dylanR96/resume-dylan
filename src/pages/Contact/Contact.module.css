@@ -2,13 +2,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  height: 100svh;
 }
 
 .contact-page__content {
   max-width: 1280px;
+  height: 100svh;
   margin: auto;
   display: flex;
   flex-direction: column;
+  background-image: url(/images/scroll.png);
+  background-size: 800px;
+  background-position: center;
+  background-repeat: no-repeat;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact-page__my-info {

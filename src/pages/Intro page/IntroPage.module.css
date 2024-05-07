@@ -2,11 +2,29 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background: linear-gradient(
+    135deg,
+    #070709,
+    #4b2d2e,
+    #824334,
+    #f42c1d,
+    #ae1918,
+    #701c1a
+  );
 }
 
 .intro-page__content {
   max-width: 1280px;
+  width: 40rem;
+  height: 100svh;
   margin: auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(62, 62, 62, 0.23);
+}
+
+.intro-page__die {
+  width: 25rem;
 }

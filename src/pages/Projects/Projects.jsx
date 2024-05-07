@@ -5,7 +5,7 @@ import styles from "./Projects.module.css";
 import Buttons from "../../components/Buttons";
 
 const Projects = () => {
-  const [repos, setRepos] = useState([]);
+  const [repos, setRepos] = useState([""]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -13,7 +13,6 @@ const Projects = () => {
           "https://api.github.com/users/dylanR96/repos"
         );
         const result = await response.json();
-        console.log(result[0]);
         setRepos(result);
       } catch (error) {
         console.log(error);
@@ -22,7 +21,7 @@ const Projects = () => {
 
     fetchData();
   }, []);
-
+  console.log(repos[0]);
   const [view, setView] = useState("view1");
 
   return (
@@ -52,8 +51,7 @@ const Projects = () => {
             repos.map((repo) => (
               <div key={repo.id}>
                 {" "}
-                <p>{repo.name}</p>
-                <a href={repo.clone_url}>{repo.clone_url}</a>
+                <a href={repo.clone_url}>{repo.name}</a>
               </div>
             ))}
           {view === "view3" && <h1>Completed quests</h1>}
