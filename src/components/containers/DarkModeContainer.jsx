@@ -5,7 +5,7 @@ import Buttons from "../Buttons";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const DarkModeContainer = () => {
+const DarkModeContainer = ({ label }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const mode = useSelector((state) => state.darkMode);
@@ -16,22 +16,19 @@ const DarkModeContainer = () => {
     isdarkMode ? dispatch(darkMode(false)) : dispatch(darkMode(true));
   };
 
-  const turnOnDarkMode = () => {
-    dispatch(darkMode(true));
-  };
-
   useEffect(() => {
-    document.body.style.backgroundColor = isdarkMode ? "#292c35" : "#fff";
+    document.body.style.background = isdarkMode ? "#292c35" : "#fff";
   }, [isdarkMode]);
+
   return (
     <>
       <Buttons
         onClick={() => {
-          turnOnDarkMode();
+          switchDarkMode();
           navigate("/about");
         }}
         checked={isdarkMode}
-        label={"Enter without rolling"}
+        label={label}
       />
     </>
   );

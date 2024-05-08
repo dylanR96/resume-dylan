@@ -1,7 +1,7 @@
 import { DARK_MODE } from "../constants/actionTypes";
 
 const initialState = {
-  isdarkMode: !!JSON.parse(localStorage.getItem("darkmode")),
+  isdarkMode: JSON.parse(localStorage.getItem("darkMode")),
 };
 
 const darkModeReducer = (state = initialState, action) => {

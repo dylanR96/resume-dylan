@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../../components/navigation/Navbar";
 import styles from "./Contact.module.css";
-import { RavenSvg, ScrollSvg } from "./RavenSvg";
+import RavenSvg from "../../components/svgs/RavenSvg";
 
 const Contact = () => {
   return (

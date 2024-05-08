@@ -1,15 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&family=Press+Start+2P&family=VT323&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=MedievalSharp&family=Press+Start+2P&family=Uncial+Antiqua&family=VT323&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=MedievalSharp&family=Press+Start+2P&family=Uncial+Antiqua&family=VT323&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=MedievalSharp&family=Press+Start+2P&family=Uncial+Antiqua&family=UnifrakturMaguntia&family=VT323&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=IM+Fell+English:ital@0;1&family=MedievalSharp&family=Press+Start+2P&family=Uncial+Antiqua&family=UnifrakturMaguntia&family=VT323&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&family=MedievalSharp&family=Press+Start+2P&family=Uncial+Antiqua&family=UnifrakturMaguntia&family=VT323&display=swap");
+
 .intro-page__wrapper {
+  font-family: "IM Fell English SC", serif;
+  font-weight: 400;
+  font-style: normal;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(
-    135deg,
-    #070709,
-    #4b2d2e,
-    #824334,
-    #f42c1d,
-    #ae1918,
-    #701c1a
+  background: radial-gradient(
+    circle,
+    rgba(255, 18, 63, 1) 0%,
+    rgba(219, 16, 55, 1) 12%,
+    rgba(187, 16, 50, 1) 20%,
+    rgba(159, 12, 42, 1) 30%,
+    rgba(145, 11, 39, 1) 41%,
+    rgba(130, 12, 37, 1) 48%,
+    rgba(112, 11, 33, 1) 55%,
+    rgba(93, 8, 27, 1) 65%,
+    rgba(50, 5, 17, 1) 100%
   );
 }
 
@@ -22,9 +44,84 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(62, 62, 62, 0.23);
+  background-color: rgba(0, 0, 0, 0.155);
 }
 
+.intro-page__dice-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+}
 .intro-page__die {
   width: 25rem;
 }
+
+.intro-page__darkmode-btn {
+  margin-top: 2rem;
+}
+
+.intro-page__result {
+  height: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 
+.font1 {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-size: 5rem;
+  font-style: normal;
+}
+
+.font2 {
+  font-family: "VT323", monospace;
+  font-weight: 400;
+  font-size: 5rem;
+  font-style: normal;
+}
+
+.font3 {
+  font-family: "MedievalSharp", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5rem;
+}
+
+.font4 {
+  font-family: "Uncial Antiqua", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5rem;
+}
+
+.font5 {
+  font-family: "Cinzel Decorative", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5rem;
+}
+
+.font6 {
+  font-family: "UnifrakturMaguntia", cursive;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5rem;
+}
+
+.font7 {
+  font-family: "IM Fell English", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5rem;
+}
+
+.font8 {
+  font-family: "IM Fell English SC", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5rem;
+} */

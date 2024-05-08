@@ -16,44 +16,46 @@ const AboutMe = () => {
   return (
     <>
       <Navbar />
-      <div className={styles["about-me-wrapper"]}>
-        <section className={styles["about-me-choices"]}>
-          <div className={styles["about-me-btns"]}>
-            <Buttons
-              className={styles["about-me-btn"]}
-              onClick={() => setView("view1")}
-              label={"Biography"}
-            />
-            <Buttons
-              className={styles["about-me-btn"]}
-              onClick={() => setView("view2")}
-              label={"Skills"}
-            />
-            <Buttons
-              className={styles["about-me-btn"]}
-              onClick={() => setView("view3")}
-              label={"Stats"}
-            />
+      <div className={styles["about-me__wrapper"]}>
+        <div className={styles["about-me__content"]}>
+          <div className={styles["about-me__choices"]}>
+            <div className={styles["about-me__btns"]}>
+              <Buttons
+                className={styles["about-me__btn"]}
+                onClick={() => setView("view1")}
+                label={"Biography"}
+              />
+              <Buttons
+                className={styles["about-me__btn"]}
+                onClick={() => setView("view2")}
+                label={"Skills"}
+              />
+              <Buttons
+                className={styles["about-me__btn"]}
+                onClick={() => setView("view3")}
+                label={"Stats"}
+              />
+            </div>
+            <div className={styles["about-me__info-section"]}>
+              {view === "view1" && <BiographyInfo />}
+              {view === "view2" && <SkillsInfo />}
+              {view === "view3" && <StatsInfo />}
+            </div>
           </div>
-          <div className={styles["about-me-info-section"]}>
-            {view === "view1" && <BiographyInfo />}
-            {view === "view2" && <SkillsInfo />}
-            {view === "view3" && <StatsInfo />}
-          </div>
-        </section>
-        <aside className={styles["about-me-aside"]}>
-          <img
-            src={linkedInphoto}
-            alt="profile picture"
-            height="400px"
-            width="400px"
-          />
-          <div className={styles["about-me-info"]}>
-            <p>Gender: Male</p>
-            <p>Origin: Human</p>
-            <p>Class: Frontend developer</p>
-          </div>
-        </aside>
+          <aside className={styles["about-me__aside"]}>
+            <img
+              src={linkedInphoto}
+              alt="profile picture"
+              height="400px"
+              width="400px"
+            />
+            <div className={styles["about-me__info"]}>
+              <p>Gender: Male</p>
+              <p>Origin: Human</p>
+              <p>Class: Frontend developer</p>
+            </div>
+          </aside>
+        </div>
       </div>
     </>
   );

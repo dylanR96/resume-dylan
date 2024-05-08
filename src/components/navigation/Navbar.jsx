@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 import styles from "./Navbar.module.css";
+import DarkModeContainer from "../containers/DarkModeContainer";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -27,6 +28,7 @@ const Navbar = () => {
             Go back
           </a>
         </div>
+        <DarkModeContainer label={"Dark and light"} />
       </section>
     </>
   );
