@@ -1,12 +1,40 @@
 import { darkMode } from "../../redux/actions/darkModeAction";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import Buttons from "../Buttons";
+import { BtnOn, BtnOnOff } from "../Buttons";
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const DarkModeContainer = ({ label }) => {
+const DarkModeOn = ({ label }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const mode = useSelector((state) => state.darkMode);
+
+  const { isdarkMode } = mode;
+
+  const turnOnDarkMode = () => {
+    isdarkMode == dispatch(darkMode(true));
+  };
+
+  useEffect(() => {
+    document.body.style.background = "#fff";
+  }, [isdarkMode]);
+
+  return (
+    <>
+      <BtnOn
+        onClick={() => {
+          turnOnDarkMode();
+          navigate("/about");
+        }}
+        checked={isdarkMode}
+        label={label}
+      />
+    </>
+  );
+};
+
+const DarkModeOnOff = ({ label }) => {
   const dispatch = useDispatch();
   const mode = useSelector((state) => state.darkMode);
 
@@ -22,10 +50,9 @@ const DarkModeContainer = ({ label }) => {
 
   return (
     <>
-      <Buttons
+      <BtnOnOff
         onClick={() => {
           switchDarkMode();
-          navigate("/about");
         }}
         checked={isdarkMode}
         label={label}
@@ -34,4 +61,4 @@ const DarkModeContainer = ({ label }) => {
   );
 };
 
-export default DarkModeContainer;
+export { DarkModeOn, DarkModeOnOff };

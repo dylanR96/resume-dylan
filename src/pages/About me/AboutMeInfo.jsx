@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./AboutMeInfo.module.css";
 
 const BiographyInfo = () => {
   return (
@@ -60,29 +61,32 @@ const SkillsInfo = () => {
 
 const StatsInfo = () => {
   return (
-    <ul>
-      <li>Languages</li>
+    <>
       <ul>
-        <li>
-          English
-          <ul>
-            <li>Native or bilingual proficiency</li>
-          </ul>
-        </li>
-        <li>
-          Spanish
-          <ul>
-            <li>Limited working proficiency</li>
-          </ul>
-        </li>
-        <li>
-          Swedish
-          <ul>
-            <li>Native or bilingual proficiency</li>
-          </ul>
-        </li>
+        <li>Languages</li>
+        <ul>
+          <li>
+            English
+            <ul>
+              <li>Native or bilingual proficiency</li>
+            </ul>
+          </li>
+          <li>
+            Spanish
+            <ul>
+              <li>Limited working proficiency</li>
+            </ul>
+          </li>
+          <li>
+            Swedish
+            <ul>
+              <li>Native or bilingual proficiency</li>
+            </ul>
+          </li>
+        </ul>
       </ul>
-    </ul>
+      <div className={styles["testing"]}></div>
+    </>
   );
 };
 

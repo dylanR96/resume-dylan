@@ -1,13 +1,16 @@
-.projects-wrapper {
+.projects__wrapper {
   display: flex;
   max-width: 1280px;
   height: 100svh;
   margin: auto;
   justify-content: center;
+  align-items: center;
   gap: 2rem;
+
+  margin-top: 2rem;
 }
 
-.project-btns {
+.project__btns {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,14 +18,16 @@
   align-items: center;
 }
 
-.project-btn {
-  width: 8rem;
-}
-
-.projects-section {
+.projects__section {
   margin-top: 5rem;
   display: flex;
   flex-direction: column;
   background-color: rgb(240, 249, 255);
   width: 40rem;
+  height: 50rem;
+  border-radius: 20px;
+}
+
+.projects__side-quest-container {
+  border: 1px solid black;
 }

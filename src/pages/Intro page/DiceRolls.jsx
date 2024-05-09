@@ -3,7 +3,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { animate, motion } from "framer-motion";
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import Buttons from "../../components/Buttons";
+import { BtnChange } from "../../components/Buttons";
 import styles from "./IntroPage.module.css";
 import {
   DiceSideOne,
@@ -86,12 +86,12 @@ const DiceRolls = () => {
           },
         }}
       />
-      <Buttons onClick={handleClick} label={"Roll"} />
+      <BtnChange onClick={handleClick} label={"Roll"} />
       {enter === false && <div className={styles["intro-page__result"]}></div>}
       {enter === true && (
         <div className={styles["intro-page__result"]}>
           <p>Welcome!</p>
-          <Buttons onClick={() => navigate("/about")} label={"Home"} />
+          <BtnChange onClick={() => navigate("/about")} label={"Home"} />
         </div>
       )}
     </>

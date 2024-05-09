@@ -1,34 +1,45 @@
 import React from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 import styles from "./Navbar.module.css";
-import DarkModeContainer from "../containers/DarkModeContainer";
+import { DarkModeOnOff } from "../containers/DarkModeContainer";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const isActive = (path) => {
+    return location.pathname === path ? styles["active-link"] : "";
+  };
+
   return (
     <>
       <section className={styles["nav__wrapper"]}>
         <div className={styles["nav__container"]}>
-          <a className={styles["nav__link"]} onClick={() => navigate("/about")}>
-            About me
-          </a>
-          <a
-            className={styles["nav__link"]}
-            onClick={() => navigate("/projects")}
-          >
-            Projects
-          </a>
-          <a
-            className={styles["nav__link"]}
-            onClick={() => navigate("/contact")}
-          >
-            Contact
-          </a>
-          <a className={styles["nav__link"]} onClick={() => navigate("/")}>
-            Go back
-          </a>
+          <div className={styles["nav__links"]}>
+            <a
+              className={`${styles["nav__link"]} ${isActive("/about")}`}
+              onClick={() => navigate("/about")}
+            >
+              About me
+            </a>
+            <a
+              className={`${styles["nav__link"]} ${isActive("/projects")}`}
+              onClick={() => navigate("/projects")}
+            >
+              Projects
+            </a>
+            <a
+              className={`${styles["nav__link"]} ${isActive("/contact")}`}
+              onClick={() => navigate("/contact")}
+            >
+              Contact
+            </a>
+            <a className={styles["nav__link"]} onClick={() => navigate("/")}>
+              Go back
+            </a>
+          </div>
+          <DarkModeOnOff label={"Dark and light"} />
         </div>
-        <DarkModeContainer label={"Dark and light"} />
       </section>
     </>
   );

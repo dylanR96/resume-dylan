@@ -2,10 +2,11 @@ import React from "react";
 import { useEffect, useState } from "react";
 import Navbar from "../../components/navigation/Navbar";
 import styles from "./Projects.module.css";
-import Buttons from "../../components/Buttons";
+import { BtnChange } from "../../components/Buttons";
 
 const Projects = () => {
-  const [repos, setRepos] = useState([""]);
+  const [completedRepo, setCompletedRepo] = useState([""]);
+  const [ongoingRepo, setOngoingRepo] = useState([""]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -13,7 +14,15 @@ const Projects = () => {
           "https://api.github.com/users/dylanR96/repos"
         );
         const result = await response.json();
-        setRepos(result);
+        console.log(result);
+        const firstRepoIndex = 11;
+        const secondRepoIndex = 18;
+        const firstNSecond = [];
+        const firstRepo = result.splice(firstRepoIndex, 1)[0];
+        const secondRepo = result.splice(secondRepoIndex - 1, 1)[0];
+        const combinedRepositories = [firstRepo, secondRepo, ...firstNSecond];
+        setOngoingRepo(combinedRepositories);
+        setCompletedRepo(result);
       } catch (error) {
         console.log(error);
       }
@@ -21,40 +30,46 @@ const Projects = () => {
 
     fetchData();
   }, []);
-  console.log(repos[0]);
-  const [view, setView] = useState("view1");
+
+  const [view, setView] = useState("Main quest");
 
   return (
     <>
       <Navbar />
-      <div className={styles["projects-wrapper"]}>
-        <div className={styles["project-btns"]}>
-          <Buttons
-            className={styles["project-btn"]}
-            onClick={() => setView("view1")}
+      <div className={styles["projects__wrapper"]}>
+        <div className={styles["project__btns"]}>
+          <BtnChange
+            onClick={() => setView("Main quest")}
             label={"Main quest"}
           />
-          <Buttons
-            className={styles["project-btn"]}
-            onClick={() => setView("view2")}
+          <BtnChange
+            onClick={() => setView("Side quests")}
             label={"Side quests"}
           />
-          <Buttons
-            className={styles["project-btn"]}
-            onClick={() => setView("view3")}
+          <BtnChange
+            onClick={() => setView("completed quests")}
             label={"Completed quests"}
           />
         </div>
-        <section className={styles["projects-section"]}>
-          {view === "view1" && <h1>Main quest</h1>}
-          {view === "view2" &&
-            repos.map((repo) => (
+        <section className={styles["projects__section"]}>
+          {view === "Main quest" && <h1>Main quest</h1>}
+          {view === "Side quests" &&
+            ongoingRepo.map((repo) => (
+              <div
+                key={repo.id}
+                className={styles["projects__side-quest-container"]}
+              >
+                {" "}
+                <a href={repo.clone_url}>{repo.name}</a>
+              </div>
+            ))}
+          {view === "completed quests" &&
+            completedRepo.map((repo) => (
               <div key={repo.id}>
                 {" "}
                 <a href={repo.clone_url}>{repo.name}</a>
               </div>
             ))}
-          {view === "view3" && <h1>Completed quests</h1>}
         </section>
       </div>
     </>

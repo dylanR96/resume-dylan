@@ -2,9 +2,11 @@ import React from "react";
 import styles from "./IntroPage.module.css";
 import DiceRolls from "./DiceRolls";
 import { motion } from "framer-motion";
-import DarkModeContainer from "../../components/containers/DarkModeContainer";
+import { DarkModeOn } from "../../components/containers/DarkModeContainer";
+import { useNavigate } from "react-router-dom";
 
 const IntroPage = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className={styles["intro-page__wrapper"]}>
@@ -118,7 +120,7 @@ const IntroPage = () => {
             </div>
           </motion.div>
           <div className={styles["intro-page__darkmode-btn"]}>
-            <DarkModeContainer label={"Enter"} />
+            <DarkModeOn label={"Enter"} onClick={() => navigate("/about")} />
           </div>
           {/* <div className={styles["font1"]}>IntroPage</div>
           <div className={styles["font2"]}>IntroPage</div>
