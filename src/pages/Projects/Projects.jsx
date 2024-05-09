@@ -17,10 +17,14 @@ const Projects = () => {
         console.log(result);
         const firstRepoIndex = 11;
         const secondRepoIndex = 18;
-        const firstNSecond = [];
+        const firstAndSecondRepo = [];
         const firstRepo = result.splice(firstRepoIndex, 1)[0];
         const secondRepo = result.splice(secondRepoIndex - 1, 1)[0];
-        const combinedRepositories = [firstRepo, secondRepo, ...firstNSecond];
+        const combinedRepositories = [
+          firstRepo,
+          secondRepo,
+          ...firstAndSecondRepo,
+        ];
         setOngoingRepo(combinedRepositories);
         setCompletedRepo(result);
       } catch (error) {
@@ -37,40 +41,45 @@ const Projects = () => {
     <>
       <Navbar />
       <div className={styles["projects__wrapper"]}>
-        <div className={styles["project__btns"]}>
-          <BtnChange
-            onClick={() => setView("Main quest")}
-            label={"Main quest"}
-          />
-          <BtnChange
-            onClick={() => setView("Side quests")}
-            label={"Side quests"}
-          />
-          <BtnChange
-            onClick={() => setView("completed quests")}
-            label={"Completed quests"}
-          />
+        <div className={styles["projects__content"]}>
+          <div className={styles["project__btns"]}>
+            <BtnChange
+              onClick={() => setView("Main quest")}
+              label={"Main quest"}
+            />
+            <BtnChange
+              onClick={() => setView("Side quests")}
+              label={"Side quests"}
+            />
+            <BtnChange
+              onClick={() => setView("completed quests")}
+              label={"Completed quests"}
+            />
+          </div>
+          <section className={styles["projects__section"]}>
+            {view === "Main quest" && <h1>Main quest</h1>}
+            {view === "Side quests" &&
+              ongoingRepo.map((repo) => (
+                <div
+                  key={repo.id}
+                  className={styles["projects__sideQ-container"]}
+                >
+                  {" "}
+                  <a href={repo.clone_url}>{repo.name}</a>
+                </div>
+              ))}
+            {view === "completed quests" &&
+              completedRepo.map((repo) => (
+                <div
+                  key={repo.id}
+                  className={styles["projects__completedQ-container"]}
+                >
+                  {" "}
+                  <a href={repo.clone_url}>{repo.name}</a>
+                </div>
+              ))}
+          </section>
         </div>
-        <section className={styles["projects__section"]}>
-          {view === "Main quest" && <h1>Main quest</h1>}
-          {view === "Side quests" &&
-            ongoingRepo.map((repo) => (
-              <div
-                key={repo.id}
-                className={styles["projects__side-quest-container"]}
-              >
-                {" "}
-                <a href={repo.clone_url}>{repo.name}</a>
-              </div>
-            ))}
-          {view === "completed quests" &&
-            completedRepo.map((repo) => (
-              <div key={repo.id}>
-                {" "}
-                <a href={repo.clone_url}>{repo.name}</a>
-              </div>
-            ))}
-        </section>
       </div>
     </>
   );

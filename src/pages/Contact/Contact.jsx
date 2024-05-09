@@ -14,11 +14,29 @@ const Contact = () => {
           </div>
           <div className={styles["contact-page__form-wrapper"]}>
             <form className={styles["contact-page__form"]}>
-              <input type="text" name="name" placeholder="Name" />
+              <input
+                className={styles["contact-page__inputs"]}
+                type="text"
+                name="name"
+                placeholder="Name"
+              />
 
-              <input type="text" name="number" placeholder="Contact number" />
-              <input type="text" name="email" placeholder="Email address" />
-              <select name="contact-reason">
+              <input
+                className={styles["contact-page__inputs"]}
+                type="text"
+                name="number"
+                placeholder="Contact number"
+              />
+              <input
+                className={styles["contact-page__inputs"]}
+                type="text"
+                name="email"
+                placeholder="Email address"
+              />
+              <select
+                className={styles["contact-page__inputs"]}
+                name="contact-reason"
+              >
                 <option value="" placeholder="Reason for contact"></option>
                 <option value="work">Work</option>
                 <option value="colab">Collaboration</option>
@@ -27,6 +45,7 @@ const Contact = () => {
                 </option>
               </select>
               <textarea
+                className={styles["contact-page__inputs"]}
                 name="message"
                 rows={4}
                 cols={40}

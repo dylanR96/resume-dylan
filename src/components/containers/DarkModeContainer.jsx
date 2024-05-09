@@ -45,7 +45,9 @@ const DarkModeOnOff = ({ label }) => {
   };
 
   useEffect(() => {
-    document.body.style.background = isdarkMode ? "#292c35" : "#fff";
+    document.body.style = isdarkMode
+      ? "background-color: #000000"
+      : "background: repeating-linear-gradient( 45deg, #e9e9e9, #fbfbfb 15%, #e0e0e0 20%)";
   }, [isdarkMode]);
 
   return (

@@ -30,13 +30,15 @@ const AboutMe = () => {
             </div>
           </div>
           <aside className={styles["about-me__aside"]}>
-            <img
-              className={styles["about-me__image"]}
-              src={linkedInphoto}
-              alt="profile picture"
-              height="400px"
-              width="400px"
-            />
+            <div className={styles["about-me__image-container"]}>
+              <img
+                className={styles["about-me__image"]}
+                src={linkedInphoto}
+                alt="profile picture"
+                height="350px"
+                width="350px"
+              />
+            </div>
             <div className={styles["about-me__info"]}>
               <p>Gender: Male</p>
               <p>Origin: Human</p>

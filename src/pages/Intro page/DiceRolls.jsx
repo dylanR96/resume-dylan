@@ -16,7 +16,7 @@ import {
 
 const DiceRolls = () => {
   const navigate = useNavigate();
-  const [dice, setDice] = useState(null);
+  const [dice, setDice] = useState(<DiceSideSix />);
   const [enter, setEnter] = useState(null);
 
   const successRoll = () => toast.success("Success!");

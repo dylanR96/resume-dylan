@@ -14,7 +14,6 @@
 .about-me__content {
   display: flex;
   max-width: 1280px;
-  height: 100svh;
   margin: auto;
   justify-content: center;
   align-items: center;
@@ -26,9 +25,10 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30rem;
-  height: 50rem;
-  border-radius: 20px;
+  width: 100%;
+  max-width: 30rem;
+  height: auto;
+  border-radius: 5px;
 }
 
 .about-me__btns {
@@ -38,32 +38,47 @@
 
 .about-me__info-section {
   background-color: rgb(227, 214, 214);
-  border-radius: 20px;
+  border-radius: 5px;
   height: 40rem;
   padding: 2rem;
   font-size: 1rem;
   margin-top: 1.2rem;
 }
-.about-me__skills-list {
-  font-size: 2rem;
-}
 
 .about-me__aside {
   display: flex;
+  border-radius: 5px;
   flex-direction: column;
   justify-content: center;
-  height: 40rem;
+  height: auto;
   margin-top: 2.3rem;
+  background: linear-gradient(
+    to bottom,
+    rgba(159, 12, 42, 1),
+    rgba(145, 11, 39, 1),
+    rgba(130, 12, 37, 1),
+    rgba(112, 11, 33, 1),
+    rgba(93, 8, 27, 1),
+    rgba(50, 5, 17, 1)
+  );
+}
+
+.about-me__image-container {
+  padding: 1rem;
 }
 
 .about-me__image {
-  border-radius: 20px;
-  margin-bottom: 2rem;
+  border-radius: 5px;
 }
 
 .about-me__info {
-  background-color: rgb(190, 175, 175);
-  border-radius: 20px;
   padding: 2rem;
   font-size: 1.5rem;
+  color: rgb(186, 183, 156);
+}
+
+@media screen and (max-width: 768px) {
+  .about-me__content {
+    flex-direction: column;
+  }
 }
