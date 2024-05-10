@@ -35,8 +35,25 @@ This button also uses redux control state.
 ## Packages Used
 
 - Toast: for displaying success or failure messages
+  I chose this package to easily display a success or failure message to give user quick and easy feedback on their result. 
+  I think this package is easy to import and use, it also offers good choices for styling. This package does not interfere with any elements on the page so no extra styling is needed. 
+How to use:
+First visit: https://react-hot-toast.com/docs
+Install the package in the terminal using npm install react-hot-toast
+Import the following: import toast, { Toaster } from 'react-hot-toast';
+You can then use the package. The website has extensive information on how to use the package and also the options for styling.
+
 - Redux: to control the state of dark mode
+
 - Framer Motion: for animating the intro page border
+  I chose this package to quickly and easily integrate animation in my code. This package provides many option for animation and is easily to implement. 
+  It lets you integrate the code in your jsx file instead of the css file in a eaily to read format. It also offers many options when importing components. I found it easy to use and implement.
+How to use:
+First visit: https://react-hot-toast.com/docs](https://www.framer.com/motion/introduction/
+Install the package in the terminal using npm install framer-motion
+Import the following: import { motion } from "framer-motion"; 
+You can also import { animate} depending on how you use the package.
+You can then use the package. The website has extensive information on how to use the package and also the options for styling.
 
 ## Running project
 
