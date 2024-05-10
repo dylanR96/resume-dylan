@@ -11,6 +11,8 @@ const IntroPage = () => {
     <>
       <div className={styles["intro-page__wrapper"]}>
         <div className={styles["intro-page__content"]}>
+          {/* Animation for border of dice roll */}
+          {/* Each motion div is for one side of the container*/}
           <motion.div
             id="dice-roll-border"
             style={{
@@ -122,14 +124,6 @@ const IntroPage = () => {
           <div className={styles["intro-page__darkmode-btn"]}>
             <DarkModeOn label={"Enter"} onClick={() => navigate("/about")} />
           </div>
-          {/* <div className={styles["font1"]}>IntroPage</div>
-          <div className={styles["font2"]}>IntroPage</div>
-          <div className={styles["font3"]}>IntroPage</div>
-          <div className={styles["font4"]}>IntroPage</div>
-          <div className={styles["font5"]}>IntroPage</div>
-          <div className={styles["font6"]}>IntroPage</div>
-          <div className={styles["font7"]}>IntroPage</div>
-          <div className={styles["font8"]}>IntroPage</div> */}
         </div>
       </div>
     </>

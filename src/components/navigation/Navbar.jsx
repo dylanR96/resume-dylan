@@ -34,9 +34,6 @@ const Navbar = () => {
             >
               Contact
             </a>
-            <a className={styles["nav__link"]} onClick={() => navigate("/")}>
-              Go back
-            </a>
           </div>
           <DarkModeOnOff label={"Dark and light"} />
         </div>

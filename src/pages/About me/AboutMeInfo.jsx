@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./AboutMeInfo.module.css";
 
 const BiographyInfo = () => {
   return (
@@ -85,7 +84,6 @@ const StatsInfo = () => {
           </li>
         </ul>
       </ul>
-      <div className={styles["testing"]}></div>
     </>
   );
 };

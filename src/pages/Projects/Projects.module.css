@@ -35,7 +35,7 @@
   flex-direction: column;
   background-color: rgb(240, 249, 255);
   max-width: 40rem;
-  height: 70rem;
+  height: 60rem;
   width: 100%;
   padding: 1rem;
   box-sizing: border-box;
@@ -48,6 +48,7 @@
   padding: 1rem;
   height: 5rem;
   border: 1px solid black;
+  border-radius: 5px;
 }
 
 .projects__completedQ-container {

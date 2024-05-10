@@ -35,14 +35,14 @@
 
 .intro-page__dice-container {
   display: flex;
-  height: 45rem;
+  height: 35rem;
   flex-direction: column;
   align-items: center;
-  font-size: 1.5rem;
-  padding: 1.5rem;
+  font-size: 1.3rem;
+  padding: 1rem;
 }
 .intro-page__die {
-  width: 25rem;
+  width: 15rem;
 }
 
 .intro-page__darkmode-btn {
@@ -50,8 +50,5 @@
 }
 
 .intro-page__result {
-  height: 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin-top: 2rem;
 }

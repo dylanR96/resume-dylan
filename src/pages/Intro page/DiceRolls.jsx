@@ -1,6 +1,5 @@
 import React from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { animate, motion } from "framer-motion";
 import { useState } from "react";
 import { useNavigate } from "react-router";
 import { BtnChange } from "../../components/Buttons";
@@ -27,6 +26,8 @@ const DiceRolls = () => {
     animateDice(diceResult);
   };
 
+  // Function that check dice result from handle click and displays result
+  //Also calls toast variable to display success or failure message
   const animateDice = (diceResult) => {
     const diceSides = [
       null,
@@ -38,21 +39,7 @@ const DiceRolls = () => {
       <DiceSideSix />,
     ];
 
-    setDice(
-      <motion.div
-        id="dice"
-        animate={{ y: [-40, 0, -40] }}
-        transition={{
-          times: [0, 1],
-          duration: 1,
-          repeat: 5,
-          repeatType: "reverse",
-          ease: "easeInOut",
-        }}
-      >
-        {diceSides[diceResult]}
-      </motion.div>
-    );
+    setDice(diceSides[diceResult]);
 
     if (
       diceResult === 3 ||
@@ -90,8 +77,7 @@ const DiceRolls = () => {
       {enter === false && <div className={styles["intro-page__result"]}></div>}
       {enter === true && (
         <div className={styles["intro-page__result"]}>
-          <p>Welcome!</p>
-          <BtnChange onClick={() => navigate("/about")} label={"Home"} />
+          <BtnChange onClick={() => navigate("/about")} label={"Welcome!"} />
         </div>
       )}
     </>

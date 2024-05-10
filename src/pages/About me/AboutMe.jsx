@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../../components/navigation/Navbar";
 import { BtnChange } from "../../components/Buttons";
-import linkedInphoto from "/images/linkedInphoto.jpg";
+import linkedInphoto from "/images/linkedInphoto.png";
 import { useState } from "react";
 import styles from "./AboutMe.module.css";
 import { BiographyInfo, SkillsInfo, StatsInfo } from "./AboutMeInfo";

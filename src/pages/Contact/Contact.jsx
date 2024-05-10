@@ -1,19 +1,37 @@
 import React from "react";
 import Navbar from "../../components/navigation/Navbar";
 import styles from "./Contact.module.css";
-import RavenSvg from "../../components/svgs/RavenSvg";
+import toast, { Toaster } from "react-hot-toast";
 
 const Contact = () => {
+  const successRoll = () => toast.success("Your info has been sent!");
+
+  const formSubmission = (event) => {
+    event.preventDefault();
+    successRoll();
+  };
+
   return (
     <>
       <Navbar />
+
       <div className={styles["contact-page__wrapper"]}>
+        <Toaster
+          toastOptions={{
+            success: {
+              style: {
+                background: "green",
+              },
+            },
+          }}
+        />
         <div className={styles["contact-page__content"]}>
-          <div className={styles["contact-page__my-info"]}>
-            Here is all my info
-          </div>
           <div className={styles["contact-page__form-wrapper"]}>
-            <form className={styles["contact-page__form"]}>
+            <form
+              onSubmit={formSubmission}
+              className={styles["contact-page__form"]}
+            >
+              <h2>Send me your information and let's connect!</h2>
               <input
                 className={styles["contact-page__inputs"]}
                 type="text"
@@ -36,8 +54,11 @@ const Contact = () => {
               <select
                 className={styles["contact-page__inputs"]}
                 name="contact-reason"
+                defaultValue=""
               >
-                <option value="" placeholder="Reason for contact"></option>
+                <option value="" disabled>
+                  Reason for contact
+                </option>
                 <option value="work">Work</option>
                 <option value="colab">Collaboration</option>
                 <option value="other">
@@ -51,8 +72,11 @@ const Contact = () => {
                 cols={40}
                 placeholder="Personal message"
               />
-              <input type="submit" value="Send" />
-              <RavenSvg />
+              <input
+                className={styles["contact-page__submit"]}
+                type="submit"
+                value="Send"
+              />
             </form>
           </div>
         </div>
